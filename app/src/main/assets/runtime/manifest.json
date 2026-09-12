@@ -1,0 +1,232 @@
+{
+ "version": "1.0.0",
+ "backend": "qemu-i386",
+ "backendVersion": "11.0.3 (Termux termux-main)",
+ "guest": "x86_32 (Debian trixie glibc 2.41 i386)",
+ "files": [
+  {
+   "path": "lib/qemu/libandroid-shmem.so",
+   "sha256": "84475798e07c8174dbbfaec70a827fdb02f19ffa69a589380c13e7507fd0e731",
+   "size": 14432,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libandroid-support.so",
+   "sha256": "739cf829511d71dafd6c67fdbb70f3f0c6048642ea2e1967790ee961fde14430",
+   "size": 20736,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libargp.so",
+   "sha256": "6f35528f7c3ef0990a52b5e70e809c189d6693321f382a57c16fb4d5422881cc",
+   "size": 28960,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libbz2.so.1.0",
+   "sha256": "667055cac259f6a9404a24a6e927f410e2f41141709d27d5cce0071cbf525407",
+   "size": 50328,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libdw.so.1",
+   "sha256": "7094bff8045eea630fed6e6fb10ff7c6d812f95cb79faa29f466c65b7f7c7e42",
+   "size": 613120,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libelf.so.1",
+   "sha256": "f6ac9832103e209f622e59a00d6946bd81ede513ec7f6494ba92ca182abaca13",
+   "size": 89288,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libffi.so",
+   "sha256": "fcb356f322c54d7b406e61db0dd96424f6a0ee2d9daaa7318cb9a6ef3bddbdc0",
+   "size": 86040,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libglib-2.0.so.0",
+   "sha256": "9f45567de2eb2a53ec1395cf168d6d8f755baff6f2388757412a17a5c1f06778",
+   "size": 1264584,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libgmodule-2.0.so.0",
+   "sha256": "c905f8dc93c6121d467ffd5f90290dcd91520ab9d9463470dfb05e9bb4064969",
+   "size": 12680,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libgmp.so",
+   "sha256": "d3a7002e8fb504301bc12278260e36eae34c81d15cf8afe72cf4a769832b6f92",
+   "size": 402272,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libgnutls.so",
+   "sha256": "849cb75d031366c125165477078598c097284a32cfc434b8f03d2d7d54569e0d",
+   "size": 2021488,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libhogweed.so.6",
+   "sha256": "7f1d77929c042bc5cc74b712d5264a548e5f39233ca5ee3fa06fa3f5144cd1c1",
+   "size": 289952,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libiconv.so",
+   "sha256": "53349c7a84ad06da53c3976754c742d6a79f3297562f0fbe61b7ee620f783667",
+   "size": 1082512,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libidn2.so",
+   "sha256": "f5efe369f31db41c3bde8629eaa7788b69f8250b512b743cdc88e648679215fd",
+   "size": 194016,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/liblzma.so.5",
+   "sha256": "daa0cf43130e6aa1aa8239c4f0ec4d2fc34ccebc69e6f518b67556b6ab0d588b",
+   "size": 159496,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libnettle.so.8",
+   "sha256": "bf214e85b9dbd5e22f7f9f78e1d911857f99dee7796590c9515956d170bc2e4d",
+   "size": 311088,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libp11-kit.so",
+   "sha256": "ce5c6acefda27c3cc744ed21cb8666176c985b18e5a3eba1976a8631127af1ca",
+   "size": 1420456,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libpcre2-8.so",
+   "sha256": "a6bbeb410e269e50aee795b4fd1b11cbddb8b54959d1cfcd927b55b04dc19f5c",
+   "size": 489384,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libpixman-1.so",
+   "sha256": "2659cf1698d60f653203fe4427370f5ef1985fddaebfabb7b8858a7d8c72aac0",
+   "size": 566680,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libtasn1.so",
+   "sha256": "0a779648ef7ab7c8c7d17f7a1d0fc1200dd2057bc5e913469392c4c542f83239",
+   "size": 63344,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libunistring.so",
+   "sha256": "a6b1bc3791d22869e4fa4d0acd0a5a64c49910fafe47d561003f04b1ffc84e54",
+   "size": 2049216,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libz.so.1",
+   "sha256": "c47748ed4b6ca6a2ecd664bab04795f3493956ab1f5cddc4ba0efa737ef3b711",
+   "size": 72880,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "lib/qemu/libzstd.so.1",
+   "sha256": "1677d5e828c1839f111f0261697c08f99a5e4e80434659ab88e5ff859a1374f7",
+   "size": 820840,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "libqemu-i386.so",
+   "sha256": "f77847352814113e80092e71e7702f87c3c981dd841a5edeb4c9a0b861eeff4e",
+   "size": 2291408,
+   "executable": true,
+   "source": "nativelib"
+  },
+  {
+   "path": "rootfs/lib/ld-linux.so.2",
+   "sha256": "6770c051013d0ea4e6c4f08c08b8d79b8d5be2f24cee7309e3b1ec51940ff553",
+   "size": 219856,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "rootfs/lib/libc.so.6",
+   "sha256": "6f59ff673154720142afd7ad07f3bcb53155ce9ef7d1e5ac732f067761dca758",
+   "size": 2306812,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "rootfs/lib/libdl.so.2",
+   "sha256": "4b202d94f0dbf28cfd284ab8ea4dc6633a3b136125847c8a799258df817200e0",
+   "size": 13672,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "rootfs/lib/libgcc_s.so.1",
+   "sha256": "a53ae62e992b9cae7cc2b7983671aac97430980f5ef699d06defb8b852fbf405",
+   "size": 222884,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "rootfs/lib/libm.so.6",
+   "sha256": "00d95b14cfe23c6425a4450b078a3214640748a4949a46b14852f69094fafb43",
+   "size": 1160648,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "rootfs/lib/libpthread.so.0",
+   "sha256": "7a39f2694ecdb7c36c41aa34478eeb08c53dd13cb9a6031a54c740411a61537d",
+   "size": 13672,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "rootfs/lib/librt.so.1",
+   "sha256": "89afe75daf3840123deb59bd86660642ecb16c918d0403f8bdde5e677833b2b3",
+   "size": 13764,
+   "executable": false,
+   "source": "asset"
+  },
+  {
+   "path": "rootfs/lib/libstdc++.so.6",
+   "sha256": "90abf0c6a98625b812132ea9af960ee8b036e3f519e368de1084fb50532ba021",
+   "size": 2508964,
+   "executable": false,
+   "source": "asset"
+  }
+ ]
+}

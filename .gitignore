@@ -1,0 +1,28 @@
+# ---> Android
+*.apk
+*.aab
+*.ap_
+*.dex
+local.properties
+.gradle/
+build/
+app/build/
+captures/
+.externalNativeBuild/
+.cxx/
+# ---> Idea / editor
+.idea/
+*.iml
+.DS_Store
+# ---> Logs locais
+server_log.txt
+# ---> Copias soltas na raiz (o binario valido fica em app/src/main/assets/svrmaneger/)
+/samp03svr
+/SAMP-Manager-debug.apk
+# ---> Python (relay de referencia)
+/relay/__pycache__/
+__pycache__/
+*.pyc
+.venv/
+# ---> Dir auxiliar local
+/imgexp/
