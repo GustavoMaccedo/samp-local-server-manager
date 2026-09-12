@@ -11,7 +11,7 @@ Pacote: `com.samplocal.manager` · Versão atual: `1.0.1 (2)` · `minSdk 26`, `t
 
 ## Download
 
-APK pronto para instalar na página de [Releases](https://github.com/GustavoMaccedo/samp-local-server-manager/releases). Baixa o `SAMP-Manager-v1.0.1.apk`, instala e abre — o runtime é configurado sozinho na primeira execução.
+APK pronto para instalar na página de [Releases](https://github.com/GustavoMaccedo/samp-local-server-manager/releases). Baixa o `SAMP-Manager-v1.0.1.apk`, instala e abre: o runtime é configurado sozinho na primeira execução.
 
 ## Prints
 
@@ -25,7 +25,7 @@ APK pronto para instalar na página de [Releases](https://github.com/GustavoMacc
 
 ## Linguagens
 
-Proporção por linhas de código-fonte (binários do runtime — QEMU, `.so`, rootfs — fora da conta):
+Proporção por linhas de código-fonte (sem contar os binários do runtime: QEMU, `.so`, rootfs):
 
 ```
 Kotlin  ████████████████████████████░░ 94%
@@ -85,10 +85,10 @@ Start de um servidor = qemu-i386 -L <filesDir>/runtime/rootfs <serverDir>/samp03
 
 Celular normalmente está atrás de CGNAT, então `porta aberta no roteador` não existe. O app tem seleção automática de provedor, do mais barato para o mais garantido:
 
-1. **Direct** — quando há IP público/UPnP de verdade, anuncia `IP:porta` direto.
-2. **Playit.gg** — cria túnel pela API oficial (`api.playit.gg`), roda o agente local e expõe o servidor por endereço público da Playit. Inclui fluxo de claim (`playit.gg/claim/<código>`) e proxy local de `http_proxy/https_proxy`.
-3. **Relay UDP próprio (`SLR1`)** — protocolo pequeno sobre UDP com `HMAC-SHA256(token)[0:16]` em todo pacote: `REGISTER`, `DATA_A2R/R2A`, `PING/PONG`, `CLOSE`, `STATUS`. O relay nunca faz proxy aberto: cada porta de sessão é amarrada a uma sessão registrada. Implementação de referência em `relay/server.py` (só stdlib).
-4. **TURN** — alocação TURN como último recurso, com cliente STUN (RFC 5389) para classificação de NAT e medição antes de decidir.
+1. **Direct:** quando há IP público/UPnP de verdade, anuncia `IP:porta` direto.
+2. **Playit.gg:** cria túnel pela API oficial (`api.playit.gg`), roda o agente local e expõe o servidor por endereço público da Playit. Inclui fluxo de claim (`playit.gg/claim/<código>`) e proxy local de `http_proxy/https_proxy`.
+3. **Relay UDP próprio (`SLR1`):** protocolo pequeno sobre UDP com `HMAC-SHA256(token)[0:16]` em todo pacote: `REGISTER`, `DATA_A2R/R2A`, `PING/PONG`, `CLOSE`, `STATUS`. O relay nunca faz proxy aberto: cada porta de sessão é amarrada a uma sessão registrada. Implementação de referência em `relay/server.py` (só stdlib).
+4. **TURN:** alocação TURN como último recurso, com cliente STUN (RFC 5389) para classificação de NAT e medição antes de decidir.
 
 `ConnectivityRepository` + `ProviderSelector` centralizam a decisão, e a tela de Conectividade mostra NAT detectado, latência, provedor ativo e endereço para divulgar aos jogadores.
 
@@ -141,7 +141,7 @@ relay/
 
 ## Como compilar
 
-Pré-requisitos: JDK 17, Android SDK com `compileSdk 36`, e o `local.properties` apontando para o SDK (`sdk.dir=...` — arquivo local, não vai para o git).
+Pré-requisitos: JDK 17, Android SDK com `compileSdk 36`, e o `local.properties` apontando para o SDK (`sdk.dir=...`, arquivo local, não vai para o git).
 
 ```bash
 ./gradlew :app:assembleDebug
@@ -184,4 +184,4 @@ O teste cobre REGISTER/REGISTERED, ida e volta jogador → relay → Android →
 
 ## Licença
 
-MIT — ver [LICENSE](LICENSE).
+Licença MIT, ver [LICENSE](LICENSE).
