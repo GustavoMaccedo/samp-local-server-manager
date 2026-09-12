@@ -13,6 +13,16 @@ Pacote: `com.samplocal.manager` · Versão atual: `1.0.1 (2)` · `minSdk 26`, `t
 
 APK pronto para instalar na página de [Releases](https://github.com/GustavoMaccedo/samp-local-server-manager/releases). Baixa o `SAMP-Manager-v1.0.1.apk`, instala e abre — o runtime é configurado sozinho na primeira execução.
 
+## Prints
+
+| Home | Métricas | Console |
+|---|---|---|
+| <img src="docs/screenshots/01-home.jpg" width="250"> | <img src="docs/screenshots/02-metrics.jpg" width="250"> | <img src="docs/screenshots/03-console.jpg" width="250"> |
+
+| Arquivos | server.cfg | Diagnóstico |
+|---|---|---|
+| <img src="docs/screenshots/04-files.jpg" width="250"> | <img src="docs/screenshots/05-settings.jpg" width="250"> | <img src="docs/screenshots/06-diagnostics.jpg" width="250"> |
+
 ## Linguagens
 
 Proporção por linhas de código-fonte (binários do runtime — QEMU, `.so`, rootfs — fora da conta):
@@ -26,6 +36,7 @@ Outros  █░░░░░░░░░░░░░░░░░░░░░░░
 ## Sumário
 
 - [Download](#download)
+- [Prints](#prints)
 - [Linguagens](#linguagens)
 - [O que ele faz](#o-que-ele-faz)
 - [Como funciona](#como-funciona)
