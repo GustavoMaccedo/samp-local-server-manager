@@ -417,7 +417,7 @@ private fun NameDialog(
                     fontWeight = FontWeight.SemiBold)
                 CheckLine(T.fDirFound, true)
                 CheckLine(
-                    if (info.hasServerCfg) "server.cfg — " + T.fCfgFound else "server.cfg — " + T.fCfgMissing,
+                    if (info.hasServerCfg) "server.cfg: " + T.fCfgFound else "server.cfg: " + T.fCfgMissing,
                     info.hasServerCfg
                 )
                 CheckLine(

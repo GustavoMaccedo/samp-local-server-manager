@@ -59,7 +59,7 @@ Outros  █░░░░░░░░░░░░░░░░░░░░░░░
 - Dashboard com métricas do processo (CPU/mem via `/proc`), jogadores online (query SA-MP) e diagnóstico do runtime.
 - Arquivos: navegar, enviar `server.cfg`, gamemode (`.amx`), plugins (`.so`), ver logs.
 - Foreground service com notificação para manter o servidor ligado com a tela apagada.
-- App em 4 idiomas: PT-BR, EN, ES, RU. Tema claro/escuro + cor de destaque.
+- App em 4 idiomas (Português BR, English, Español, Русский), trocável em Configurações do app → Idioma, na hora e sem reiniciar. Tema claro/escuro + cor de destaque.
 
 ## Como funciona
 

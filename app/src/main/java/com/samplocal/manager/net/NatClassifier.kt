@@ -16,7 +16,7 @@ object NatClassifier {
         if (!hasNetwork) return Verdict(NatState.UNREACHABLE, "Sem rede ativa")
         if (localIp == null) return Verdict(NatState.UNKNOWN, "IP local indeterminado")
         if (reflexiveIp == null || reflexivePort == null) {
-            return Verdict(NatState.UNKNOWN, "STUN sem resposta — tipo de NAT indeterminado")
+            return Verdict(NatState.UNKNOWN, "STUN sem resposta, tipo de NAT indeterminado")
         }
         return if (reflexiveIp.hostAddress == localIp.hostAddress && reflexivePort == localPort) {
             Verdict(NatState.DIRECT, "Endereço observado igual ao local (sem NAT)")

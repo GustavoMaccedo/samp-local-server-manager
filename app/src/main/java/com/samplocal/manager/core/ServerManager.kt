@@ -149,7 +149,7 @@ class ServerManager(private val context: Context) {
             setStatus(serverId, ServerStatus.ERROR, msg)
             appendConsole(serverId, msg)
             try {
-                appendConsole(serverId, "--- diagnostico ---")
+                appendConsole(serverId, "diagnostico")
                 runtime.diagnose().lines().forEach { appendConsole(serverId, it) }
             } catch (_: Exception) { }
             return Result.failure(IllegalStateException(msg))

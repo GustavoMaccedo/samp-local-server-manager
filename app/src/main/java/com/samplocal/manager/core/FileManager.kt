@@ -73,7 +73,7 @@ class FileManager {
         else {
             binary.setExecutable(true)
         }
-        if (!cfg.exists()) warnings.add("server.cfg nao encontrado — sera criado um padrao.")
+        if (!cfg.exists()) warnings.add("server.cfg nao encontrado, sera criado um padrao.")
         if (gmCount == 0) warnings.add("Nenhum gamemode .amx encontrado.")
         return ImportReport(serverId, binary.exists(), cfg.exists(), gmCount, pluginCount, warnings)
     }

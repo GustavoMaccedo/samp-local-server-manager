@@ -339,7 +339,7 @@ fun ConnectivityScreen(
                     TechRow(T.nIpv4Local, st.localIp ?: "—")
                     TechRow(T.nIpv4Pub, st.publicIp ?: "—")
                     TechRow(T.nIpv6, st.ipv6 ?: "—")
-                    TechRow(T.nNat, "${st.nat} — ${st.natDetail}")
+                    TechRow(T.nNat, "${st.nat}: ${st.natDetail}")
                     TechRow(T.nTechStun, st.publicIp?.let { T.gOk } ?: "—")
                     TechRow(T.nUdp, "bind+query")
                     TechRow(T.nTechDirect, directText(st, T))

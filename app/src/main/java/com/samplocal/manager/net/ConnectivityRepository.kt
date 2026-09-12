@@ -123,7 +123,7 @@ class ConnectivityRepository(
                         players = null,
                         stage = ConnStage.DISCONNECTED
                     )
-                    log("Servidor parou — publicação pausada")
+                    log("Servidor parou, publicação pausada")
                 }
             }
         }
@@ -310,7 +310,7 @@ class ConnectivityRepository(
                         _agentProc.value = AgentProc.EXITED
                         _agentDetail.value =
                             "exit=${playit.agent().lastExitCode} ${playit.agent().lastError ?: ""}".trim()
-                        log("PLAYIT_PROCESS_EXITED ${_agentDetail.value} — PLAYIT_RECONNECTING em ${agentBackoffMs / 1000}s")
+                        log("PLAYIT_PROCESS_EXITED ${_agentDetail.value}, PLAYIT_RECONNECTING em ${agentBackoffMs / 1000}s")
                         delay(agentBackoffMs)
                         agentBackoffMs = (agentBackoffMs * 2).coerceAtMost(120000L)
                         startAgentAuthenticated("watch")
@@ -562,7 +562,7 @@ class ConnectivityRepository(
             _state.value = _state.value.copy(
                 linkState = LinkState.DEGRADED, method = PublishMethod.NONE,
                 nat = NatState.UNKNOWN, natDetail = "STUN sem resposta",
-                error = "STUN indisponível — verifique a internet",
+                error = "STUN indisponível: verifique a internet",
                 stage = ConnStage.CONNECTIVITY_FAILED, lastCheckMs = now()
             )
             log("STUN sem resposta (timeout)")
@@ -580,7 +580,7 @@ class ConnectivityRepository(
         _state.value = _state.value.copy(
             publicIp = sr.ip.hostAddress, publicPort = sr.port,
             nat = verdict.state,
-            natDetail = verdict.detail + if (cgnat) " — CGNAT provável" else "",
+            natDetail = verdict.detail + if (cgnat) ", CGNAT provável" else "",
             traversal = traversal
         )
 
@@ -611,7 +611,7 @@ class ConnectivityRepository(
 
             log("NAT_TRAVERSAL porta preservada mas entrada nao comprovavel sem peer")
         } else {
-            log("NAT_TRAVERSAL sem par cooperativo (clientes vanilla) — indo ao relay")
+            log("NAT_TRAVERSAL sem par cooperativo (clientes vanilla), indo ao relay")
         }
         setStage(ConnStage.TRAVERSAL_FAILED)
 
@@ -702,7 +702,7 @@ class ConnectivityRepository(
             playitReason = _state.value.error
             if (playitReason?.contains("401") == true || playitReason?.contains("rejeitou") == true) {
 
-                log("PLAYIT credencial rejeitada — limpando vínculo automaticamente")
+                log("PLAYIT credencial rejeitada, limpando vínculo automaticamente")
                 try {
                     playit.clearLink()
                     playit.agent().stop()
@@ -713,7 +713,7 @@ class ConnectivityRepository(
             }
             log("Playit indisponível (${playitReason ?: "?"}), tentando relay próprio...")
         } else {
-            log("Playit não vinculado — usando relay próprio (se houver)")
+            log("Playit não vinculado, usando relay próprio (se houver)")
         }
         log("RELAY_CONNECTING via fonte de infraestrutura")
         val infra = directory.fetch().getOrNull()
@@ -819,7 +819,7 @@ class ConnectivityRepository(
         }
         val st = session.stats()
         if (!verified) {
-            log("RELAY heartbeat sem resposta — degradado")
+            log("RELAY heartbeat sem resposta, degradado")
             _state.value = _state.value.copy(
                 linkState = LinkState.DEGRADED, method = PublishMethod.RELAY,
                 relay = relayInfo(session, provider, RelayState.FAILED),
@@ -834,7 +834,7 @@ class ConnectivityRepository(
             provider = provider.id, transport = provider.transport, region = provider.region,
             stage = ConnStage.ONLINE, lastCheckMs = now(), error = null
         )
-        log("RELAY_CONNECTED ${session.endpoint} — ONLINE via relay")
+        log("RELAY_CONNECTED ${session.endpoint}, ONLINE via relay")
         log("RELAY_TRAFFIC_TEST heartbeat OK RTT ${st.rttMs}ms")
         startStatsPump()
         updatePlayers()
@@ -872,7 +872,7 @@ class ConnectivityRepository(
 
                     val alive = try { h.session.heartbeat() } catch (_: Exception) { false }
                     if (!alive) {
-                        log("PLAYIT_HEARTBEAT falhou — tentando reconectar")
+                        log("PLAYIT_HEARTBEAT falhou, tentando reconectar")
                         _state.value = _state.value.copy(linkState = LinkState.RECONNECTING)
                         connectRelay(sampPort())
                     }
@@ -895,7 +895,7 @@ class ConnectivityRepository(
                     )
                 )
                 if (failed) {
-                    log("RELAY_DISCONNECTED — tentando reconectar")
+                    log("RELAY_DISCONNECTED, tentando reconectar")
                     _state.value = _state.value.copy(linkState = LinkState.RECONNECTING)
                     connectRelay(sampPort())
                 }
@@ -1002,7 +1002,7 @@ class ConnectivityRepository(
 
     fun onNetworkLost() {
         scope.launch {
-            log("CONNECTIVITY_CHANGED rede perdida — refazendo descoberta")
+            log("CONNECTIVITY_CHANGED rede perdida, refazendo descoberta")
             _state.value = networkLostTransition(_state.value)
             handles.values.forEach {
                 try { it.session.close() } catch (_: Exception) { }
@@ -1024,7 +1024,7 @@ class ConnectivityRepository(
                 override fun onLost(network: Network) { onNetworkLost() }
                 override fun onAvailable(network: Network) {
                     scope.launch {
-                        log("CONNECTIVITY_CHANGED rede disponivel — refazendo descoberta")
+                        log("CONNECTIVITY_CHANGED rede disponivel, refazendo descoberta")
                         runFullDiagnosis()
                     }
                 }

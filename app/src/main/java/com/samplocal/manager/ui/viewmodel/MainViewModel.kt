@@ -588,7 +588,7 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             appendLine("Server directory: ${dir.absolutePath}")
             appendLine("Process: ${current?.status ?: "STOPPED"}")
             appendLine("PID: ${current?.pid?.toString() ?: "unavailable"}")
-            appendLine("--- backend ---")
+            appendLine("backend")
             appendLine(sampApp.runtimeManager.diagnose().trim())
         }
     }

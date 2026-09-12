@@ -88,7 +88,7 @@ class RelayDirectory(private val context: Context) {
                     val p = arr.optJSONObject(i) ?: continue
                     for (k in FORBIDDEN) {
                         if (p.has(k)) throw IllegalArgumentException(
-                            "segredo '$k' em providers[] — use credentials{}"
+                            "segredo '$k' em providers[], use credentials{}"
                         )
                     }
                     val id = p.optString("id", "")
