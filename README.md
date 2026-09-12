@@ -9,8 +9,24 @@ App Android para rodar e gerenciar um servidor SA-MP (`samp03svr` Linux x86) dir
 
 Pacote: `com.samplocal.manager` · Versão atual: `1.0.1 (2)` · `minSdk 26`, `target/compile 36`.
 
+## Download
+
+APK pronto para instalar na página de [Releases](https://github.com/GustavoMaccedo/samp-local-server-manager/releases). Baixa o `SAMP-Manager-v1.0.1.apk`, instala e abre — o runtime é configurado sozinho na primeira execução.
+
+## Linguagens
+
+Proporção por linhas de código-fonte (binários do runtime — QEMU, `.so`, rootfs — fora da conta):
+
+```
+Kotlin  ████████████████████████████░░ 94%
+Python  █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  2%
+Outros  █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  4%   (JSON, XML, Gradle, Markdown)
+```
+
 ## Sumário
 
+- [Download](#download)
+- [Linguagens](#linguagens)
 - [O que ele faz](#o-que-ele-faz)
 - [Como funciona](#como-funciona)
 - [Conectividade](#conectividade)
